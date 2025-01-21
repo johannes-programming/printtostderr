@@ -9,7 +9,7 @@ authors = [
     { email = "johannes-programming@mailfence.com", name = "Johannes" },
 ]
 classifiers = [
-    "Development Status :: 2 - Pre-Alpha",
+    "Development Status :: 5 - Production/Stable",
     "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
     "Operating System :: OS Independent",
@@ -24,7 +24,7 @@ keywords = []
 name = "printtostderr"
 readme = "README.rst"
 requires-python = ">=3.8"
-version = "0.0.3.dev0+local.2"
+version = "1.0.0"
 
 [project.license]
 file = "LICENSE.txt"
