@@ -24,7 +24,7 @@ keywords = []
 name = "printtostderr"
 readme = "README.rst"
 requires-python = ">=3.8"
-version = "0.0.3.dev0+local.1"
+version = "0.0.3.dev0+local.2"
 
 [project.license]
 file = "LICENSE.txt"
