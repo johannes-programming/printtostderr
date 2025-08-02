@@ -23,8 +23,8 @@ description = "This project provides a function that prints to sys.stderr."
 keywords = []
 name = "printtostderr"
 readme = "README.rst"
-requires-python = ">=3.8"
-version = "1.0.1+local"
+requires-python = ">=3.11"
+version = "1.0.2"
 
 [project.license]
 file = "LICENSE.txt"
