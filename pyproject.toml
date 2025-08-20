@@ -1,12 +1,12 @@
 [build-system]
 build-backend = "setuptools.build_meta"
 requires = [
-    "setuptools>=61.0",
+    "setuptools>=64.0",
 ]
 
 [project]
 authors = [
-    { email = "johannes-programming@mailfence.com", name = "Johannes" },
+    { email = "johannes.programming@gmail.com", name = "Johannes" },
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -24,7 +24,7 @@ keywords = []
 name = "printtostderr"
 readme = "README.rst"
 requires-python = ">=3.11"
-version = "1.0.2"
+version = "1.0.3"
 
 [project.license]
 file = "LICENSE.txt"
