@@ -7,13 +7,16 @@ __all__ = ["main", "printtostderr"]
 
 def main(args: Optional[Iterable] = None) -> None:
     "This function parses the args and hands them to the printtostderr function."
-    if args is not None:
-        args = [str(x) for x in args]
-    parser = argparse.ArgumentParser()
+    values:Optional[list]
+    if args is None:
+        values = None
+    else:
+        values = list(map(str, args))
+    parser :argparse.ArgumentParser= argparse.ArgumentParser()
     parser.add_argument(
         "args", nargs="*", help="These arguments will be printed to sys.stderr."
     )
-    ns = parser.parse_args(args)
+    ns :argparse.Namespace= parser.parse_args(values)
     printtostderr(*ns.args)
 
 
