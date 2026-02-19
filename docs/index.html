@@ -5,7 +5,15 @@
     </head>
     <body>
         <dl class="heading0">
-            <dt><a>printtostderr</a></dt>
+            <dt>
+                <a>printtostderr</a>
+                <p>
+                    Minor Version:
+                    <select id="version">
+                        <option selected>1.0</option>
+                    </select>
+                </p>
+            </dt>
             <dd>
                 <dl class="heading1">
                     <dt id="overview">Overview</dt>
@@ -16,17 +24,17 @@
                     <dd id="linksCorpus"></dd>
                     <dt id="install">Installation</dt>
                     <dd id="installCorpus"></dd>
-                    <dt id="implement">Implementation</dt>
-                    <dd id="implementCorpus">
-                        <pre class="block"><code>import argparse
-import sys
-from typing import *
-
-__all__ = ["main", "printtostderr"]
-
-
-def main(args: Optional[Iterable] = None) -> None:
-    """This function parses the args and hands them to the printtostderr function."""
+                    <dt id="features">Features</dt>
+                    <dd id="featuresCorpus">
+                        <dl class="heading4" version="1.0">
+                            <dt id="1--main">printtostderr.main(args: Optional[Iterable] = None) -> None</dt>
+                            <dd>
+                                <p>
+                                    This function parses the args and hands them 
+                                    to the <code><a href="#1--printtostderr">printtostderr</a></code> function.
+                                </p>
+                                <pre class="block"><code>def main(args: Optional[Iterable] = None) -> None:
+    "This function parses the args and hands them to the printtostderr function."
     if args is not None:
         args = [str(x) for x in args]
     parser = argparse.ArgumentParser()
@@ -34,15 +42,21 @@ def main(args: Optional[Iterable] = None) -> None:
         "args", nargs="*", help="These arguments will be printed to sys.stderr."
     )
     ns = parser.parse_args(args)
-    printtostderr(*ns.args)
-
-
-def printtostderr(*args: Any, **kwargs: Any) -> None:
+    printtostderr(*ns.args)</code></pre>
+                            </dd>
+                            <dt id="1--printtostderr">printtostderr.printtostderr(*args: Any, **kwargs: Any) -> None</dt>
+                            <dd>
+                                <p>
+                                    This function prints to <code>sys.stderr</code>.
+                                </p>
+                                <pre class="block"><code>def printtostderr(*args: Any, **kwargs: Any) -> None:
     "This function prints to sys.stderr."
     print(*args, **kwargs, file=sys.stderr)</code></pre>
+                            </dd>
+                            <dt id="1--test">printtostderr.test() -> unittest.TextTestRunner</dt>
+                            <dd class="testingCorpus"></dd>
+                        </dl>
                     </dd>
-                    <dt id="testing">Testing</dt>
-                    <dd id="testingCorpus"></dd>
                     <dt id="license">License</dt>
                     <dd id="licenseCorpus"></dd>
                     <dt id="impressum">Impressum</dt>
@@ -51,13 +65,20 @@ def printtostderr(*args: Any, **kwargs: Any) -> None:
             </dd>
         </dl>
     </body>
-    <script src="https://www.johannes-programming.online/script.js"></script>
-    <script>
-        setupLinksCorpus("printtostderr");
-        setupInstallCorpus("printtostderr");
-        setupTestingCorpus("printtostderr");
-        setupLicenseCorpus("printtostderr");
+    <script type="module">
+        import {
+            setupImpressumCorpus,
+            setupInstallCorpus,
+            setupLicenseCorpus,
+            setupLinksCorpus,
+            setupTestingCorpus,
+            addMetaAndLinkTags,
+        } from "https://www.johannes-programming.online/script.js";
         setupImpressumCorpus("printtostderr");
+        setupInstallCorpus("printtostderr");
+        setupLicenseCorpus("printtostderr");
+        setupLinksCorpus("printtostderr");
+        setupTestingCorpus("printtostderr");
         addMetaAndLinkTags();
     </script>
 </html>
