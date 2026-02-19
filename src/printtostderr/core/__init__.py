@@ -6,7 +6,7 @@ __all__ = ["main", "printtostderr"]
 
 
 def main(args: Optional[Iterable] = None) -> None:
-    """This function parses the args and hands them to the printtostderr function."""
+    "This function parses the args and hands them to the printtostderr function."
     if args is not None:
         args = [str(x) for x in args]
     parser = argparse.ArgumentParser()
