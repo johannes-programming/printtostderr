@@ -13,24 +13,41 @@ Open your terminal and run:
 
     pip install printtostderr
 
+Typing
+------
+
+This project is strictly typed with ``mypy``.
+
+.. container:: versionadded
+
+    **Added in version 1.1.**
+
 Features
 --------
 
-``printtostderr.main(args: Optional[Iterable] = None) -> None``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``printtostderr.main(args: Optional[Iterable[str]] = None) -> None``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This function parses the ``args`` and hands them to the ``printtostderr`` function.
 
-``printtostderr.printtostderr(*args: Any, **kwargs: Any) -> None``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. container:: versionchanged
+
+    **Changed in version 1.1:** ``args`` is now typed as ``Optional[Iterable[str]]`` instead of ``Optional[Iterable]``.
+
+``printtostderr.printtostderr(*args: object, **kwargs: Any) -> None``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This function prints to ``sys.stderr``.
 
 .. code-block:: python
 
-    def printtostderr(*args: Any, **kwargs: Any) -> None:
+    def printtostderr(*args: object, **kwargs: Any) -> None:
         "This function prints to sys.stderr."
         print(*args, **kwargs, file=sys.stderr)
+
+.. container:: versionchanged
+
+    **Changed in version 1.1:** ``*args`` is now typed as ``object`` instead of ``Any``.
 
 ``printtostderr.tests.test() -> unittest.TextTestResult``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
