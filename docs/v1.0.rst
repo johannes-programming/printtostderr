@@ -1,0 +1,79 @@
+Overview
+--------
+
+This project provides a function that prints to ``sys.stderr``.
+
+Installation
+------------
+
+To install ``printtostderr``, you can use ``pip``. 
+Open your terminal and run:
+
+.. code-block:: shell
+
+    pip install printtostderr
+
+Features
+--------
+
+``printtostderr.main(args: Optional[Iterable] = None) -> None``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This function parses the ``args`` and hands them to the ``printtostderr`` function.
+
+.. code-block:: python
+
+    def main(args: Optional[Iterable] = None) -> None:
+        "This function parses the args and hands them to the printtostderr function."
+        if args is not None:
+            args = [str(x) for x in args]
+        parser = argparse.ArgumentParser()
+        parser.add_argument(
+            "args", nargs="*", help="These arguments will be printed to sys.stderr."
+        )
+        ns = parser.parse_args(args)
+        printtostderr(*ns.args)
+
+``printtostderr.printtostderr(*args: Any, **kwargs: Any) -> None``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This function prints to ``sys.stderr``.
+
+.. code-block:: python
+
+    def printtostderr(*args: Any, **kwargs: Any) -> None:
+        "This function prints to sys.stderr."
+        print(*args, **kwargs, file=sys.stderr)
+
+``printtostderr.tests.test() -> unittest.TextTestResult``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This project can be tested through its ``test`` function.
+
+.. code-block:: python
+
+    import printtostderr.tests
+    printtostderr.tests.test()
+
+License
+-------
+
+This project is licensed under the MIT License.
+
+Links
+-----
+
+- Download: https://pypi.org/project/printtostderr/#files
+- Index: https://pypi.org/project/printtostderr/
+- Source: https://github.com/johannes-programming/printtostderr/
+- Website: https://printtostderr.johannes-programming.online/
+
+Impressum
+---------
+
+**Johannes Programming**
+
+- Name: Johannes
+- Email: johannes.programming@gmail.com
+- Homepage: https://www.johannes-programming.online/
+- Gravatar: https://www.johannes-programming.fyi/
