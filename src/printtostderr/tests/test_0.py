@@ -2,7 +2,7 @@ import io
 import sys
 import unittest
 
-from raisefunction.core import main, printtostderr
+from printtostderr.core import main, printtostderr
 
 
 class TestMainAndPrintToStderr(unittest.TestCase):
