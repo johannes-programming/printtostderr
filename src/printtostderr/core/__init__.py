@@ -6,13 +6,13 @@ from typing import Any
 __all__ = ["main", "printtostderr"]
 
 
-def main(args: abc.Iterable[str] | None = None) -> None:
+def main(args: abc.Iterable[object] | None = None) -> None:
     "This function parses the args and hands them to the printtostderr function."
     args_: abc.Iterable[str] | None
     parser: argparse.ArgumentParser
     space: argparse.Namespace
     if args is None:
-        args_ = None
+        args_ = args
     else:
         args_ = list(map(str, args))
     parser = argparse.ArgumentParser()
