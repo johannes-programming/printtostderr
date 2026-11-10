@@ -16,32 +16,19 @@ Open your terminal and run:
 Features
 --------
 
-``printtostderr.main(args: Iterable[object] | None = None) -> None``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``printtostderr.main(args: Optional[Iterable] = None) -> None``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This function parses the ``args`` and hands them to the ``printtostderr`` function.
 
-.. code-block:: python
-
-    def main(args: Iterable[object] | None = None) -> None:
-        "This function parses the args and hands them to the printtostderr function."
-        if args is not None:
-            args = [str(x) for x in args]
-        parser = argparse.ArgumentParser()
-        parser.add_argument(
-            "args", nargs="*", help="These arguments will be printed to sys.stderr."
-        )
-        ns = parser.parse_args(args)
-        printtostderr(*ns.args)
-
-``printtostderr.printtostderr(*args: object, **kwargs: Any) -> None``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``printtostderr.printtostderr(*args: Any, **kwargs: Any) -> None``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This function prints to ``sys.stderr``.
 
 .. code-block:: python
 
-    def printtostderr(*args: object, **kwargs: Any) -> None:
+    def printtostderr(*args: Any, **kwargs: Any) -> None:
         "This function prints to sys.stderr."
         print(*args, **kwargs, file=sys.stderr)
 

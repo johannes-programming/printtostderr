@@ -25,23 +25,14 @@ This project is strictly typed with ``mypy``.
 Features
 --------
 
-``printtostderr.main(args: Iterable[object] | None = None) -> None``
+``printtostderr.main(args: Optional[Iterable[str]] = None) -> None``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This function parses the ``args`` and hands them to the ``printtostderr`` function.
 
-.. code-block:: python
+.. container:: versionchanged
 
-    def main(args: Iterable[object] | None = None) -> None:
-        "This function parses the args and hands them to the printtostderr function."
-        if args is not None:
-            args = [str(x) for x in args]
-        parser = argparse.ArgumentParser()
-        parser.add_argument(
-            "args", nargs="*", help="These arguments will be printed to sys.stderr."
-        )
-        ns = parser.parse_args(args)
-        printtostderr(*ns.args)
+    **Changed in version 1.1:** ``args`` is now typed as ``Optional[Iterable[str]]`` instead of ``Optional[Iterable]``.
 
 ``printtostderr.printtostderr(*args: object, **kwargs: Any) -> None``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
