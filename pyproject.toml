@@ -27,7 +27,7 @@ license-files = [
 name = "printtostderr"
 readme = "README.rst"
 requires-python = ">=3.11"
-version = "1.0.4.post0"
+version = "1.1.0.post0"
 
 [project.urls]
 Download = "https://pypi.org/project/printtostderr/#files"

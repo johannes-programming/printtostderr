@@ -8,7 +8,7 @@ __all__ = ["main", "printtostderr"]
 
 def main(args: abc.Iterable[object] | None = None) -> None:
     "This function parses the args and hands them to the printtostderr function."
-    args_: abc.Iterable[str] | None
+    args_: list[str] | None
     parser: argparse.ArgumentParser
     space: argparse.Namespace
     if args is None:
