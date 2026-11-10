@@ -16,14 +16,14 @@ Open your terminal and run:
 Features
 --------
 
-``printtostderr.main(args: Iterable[object] | None = None) -> None``
+``printtostderr.main(args: Iterable[str] | None = None) -> None``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This function parses the ``args`` and hands them to the ``printtostderr`` function.
 
 .. code-block:: python
 
-    def main(args: Iterable[object] | None = None) -> None:
+    def main(args: Iterable[str] | None = None) -> None:
         "This function parses the args and hands them to the printtostderr function."
         if args is not None:
             args = [str(x) for x in args]
