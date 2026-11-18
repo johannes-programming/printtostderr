@@ -1,5 +1,9 @@
-from printtostderr.core import *
-from printtostderr.tests import *
+__all__: list[str] = ["main", "parse_args", "printtostderr", "run", "test"]
+
+import sys
+
+from printtostderr.core import main, parse_args, printtostderr, run
+from printtostderr.tests import test
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

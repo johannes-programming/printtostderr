@@ -1,7 +1,15 @@
 from __future__ import annotations
 
-__all__: list[str] = []
+__all__: list[str] = ["main"]
 
-import printtostderr.tests
+import sys
 
-printtostderr.tests.test()
+from printtostderr.tests import test
+
+
+def main() -> int:
+    return int(not test().wasSuccessful())
+
+
+if __name__ == "__main__":
+    sys.exit(main())

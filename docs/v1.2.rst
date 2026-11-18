@@ -1,0 +1,109 @@
+Overview
+--------
+
+This project provides a function that prints to ``sys.stderr``.
+
+Installation
+------------
+
+To install ``printtostderr``, you can use ``pip``.
+Open your terminal and run:
+
+.. code-block:: shell
+
+    pip install printtostderr
+
+Typing
+------
+
+This project is strictly typed with ``mypy``.
+
+.. container:: versionadded
+
+    **Added in version 1.1.**
+
+Features
+--------
+
+``printtostderr.core``
+""""""""""""""""""""""
+
+The functions in ``printtostderr.core`` can be also imported from ``printtostderr`` directly.
+
+``main(args: Iterable[object] | None = None) -> int``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This function parses the ``args`` and hands them to the ``printtostderr`` function.
+
+.. container:: versionchanged
+
+    **Changed in version 1.2:** ``main`` is now a function and now returns an ``int`` exit code.
+
+``parse_args(args: Iterable[object] | None = None) -> Namespace``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. container:: versionadded
+
+    **Added in version 1.2.**
+
+``printtostderr(*args: object, **kwargs: Any) -> None``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This function prints to ``sys.stderr``.
+
+.. code-block:: python
+
+    def printtostderr(*args: object, **kwargs: Any) -> None:
+        "This function prints to sys.stderr."
+        print(*args, **kwargs, file=sys.stderr)
+
+.. container:: versionchanged
+
+    **Changed in version 1.1:** ``*args`` is now typed as ``object`` instead of ``Any``.
+
+``run(*args: object, end: str = "\n", sep=" ") -> None``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. container:: versionadded
+
+    **Added in version 1.2.**
+
+``printtostderr.tests``
+"""""""""""""""""""""""
+
+``test() -> unittest.TextTestResult``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This project can be tested through its ``test`` function.
+
+.. code-block:: python
+
+    import printtostderr.tests
+    printtostderr.tests.test()
+
+.. container:: versionchanged
+
+    **Changed in version 1.2:** This can now be also done through running the project's ``run_tests.py`` file.
+
+License
+-------
+
+This project is licensed under the MIT License.
+
+Links
+-----
+
+- Download: https://pypi.org/project/printtostderr/#files
+- Index: https://pypi.org/project/printtostderr/
+- Source: https://github.com/johannes-programming/printtostderr/
+- Website: https://printtostderr.johannes-programming.online/
+
+Impressum
+---------
+
+**Johannes Programming**
+
+- Name: Johannes
+- Email: johannes.programming@gmail.com
+- Homepage: https://www.johannes-programming.online/
+- Gravatar: https://www.johannes-programming.fyi/

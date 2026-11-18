@@ -1,16 +1,16 @@
+__all__: list[str] = ["TestMainAndPrintToStderr"]
+
 import io
 import unittest
 from contextlib import redirect_stderr
-from typing import *
+from typing import Any, Self
 
 from printtostderr.core import main, printtostderr
-
-__all__ = ["TestMainAndPrintToStderr"]
 
 
 class TestMainAndPrintToStderr(unittest.TestCase):
 
-    def test_printtostderr(self: Self) -> None:
+    def test_printtostderr(self: Self, /) -> None:
         "This test tests if printtostderr prints correctly to sys.stderr."
         output: Any
         stderr: io.StringIO
@@ -20,7 +20,7 @@ class TestMainAndPrintToStderr(unittest.TestCase):
         output = stderr.getvalue()
         self.assertEqual(output, "This is a test-123-!\n")
 
-    def test_main_with_args(self: Self) -> None:
+    def test_main_with_args(self: Self, /) -> None:
         "This test tests main with specific arguments."
         output: Any
         stderr: io.StringIO
@@ -30,7 +30,7 @@ class TestMainAndPrintToStderr(unittest.TestCase):
         output = stderr.getvalue()
         self.assertEqual(output, "arg1 arg2 arg3\n")
 
-    def test_main_without_args(self: Self) -> None:
+    def test_main_without_args(self: Self, /) -> None:
         "This test tests main with no arguments."
         output: Any
         stderr: io.StringIO
